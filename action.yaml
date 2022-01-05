@@ -1,21 +1,52 @@
-name: 'Hello World' # taken from https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
-description: 'Greet someone'
+name: 'Upload Released Python Package Chart to GAR'
+description: 'Extracts a Python package from a release and uploads it to GAR. This is designed to be run on a release trigger.'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  inputs:
+  credentials-json:
+    description: Google credentials json
     required: true
-    default: 'World'
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-id }}
+  project-id:
+    description: Google cloud project id
+    required: true
+  package-name:
+    description: Python package name
+    required: true
+  version:
+    description: Version to publish
+    required: false
+    default: ${{ github.event.release.tag_name }}
+  scope:
+    description: Artifact registry scope
+    required: false
+    default: '@unsupervised'
+  repository:
+    description: Artifact registry repository name
+    required: false
+    default: python
+  location:
+    description: Artifact registry location
+    required: false
+    default: us-central1
+  proto-directory:
+    description: Location of package
+    required: false
+    default: dist/*
 runs:
-  using: "composite"
+  using: composite
   steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
+    - id: auth
+      uses: google-github-actions/auth@v0
+      with:
+        credentials_json: ${{ inputs.credentials-json }}
+    - uses: google-github-actions/setup-gcloud@v0.3.0
+      with:
+        project_id: ${{ inputs.project-id }}
+    - name: Install python3/Twine
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8.8'
+      run: pip install twine
+    - name: upload python package
       shell: bash
-    - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
-      shell: bash
-    - run: ${{ github.action_path }}/goodbye.sh
-      shell: bash
+      run: |
+        twine upload --repository-url https://us-central1-python.pkg.dev/unsupervised-dev-ops/{{ inputs.repository}} {{ inputs.proto-directory }}

@@ -35,18 +35,22 @@ runs:
   using: composite
   steps:
     - id: auth
-      uses: google-github-actions/auth@v0
-      with:
-        credentials_json: ${{ inputs.credentials-json }}
-    - uses: google-github-actions/setup-gcloud@v0.3.0
+    uses: google-github-actions/auth@v0
+    with:
+      credentials_json: ${{ inputs.credentials-json }}
+      - uses: google-github-actions/setup-gcloud@v0.3.0
       with:
         project_id: ${{ inputs.project-id }}
-    - name: Install python3/Twine
+    - uses: actions/checkout@v2
+    - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.8.8'
-      run: pip install twine
-    - name: Upload python package
-      shell: bash
+    - name: Install dependencies
       run: |
-        twine upload --repository-url https://{{ inputs.location }}-python.pkg.dev/{{ inputs.project_id }}/{{ inputs.repository}} {{ inputs.dist-directory }}
+        python -m pip install --upgrade pip
+        pip install setuptools wheel twine
+    - name: Build and publish
+      run: |
+        python setup.py sdist bdist_wheel
+        twine upload --repository-url https://${{ inputs.location }}-python.pkg.dev/${{ inputs.project_id }}/${{ inputs.repository}} ${{ inputs.dist-directory }}

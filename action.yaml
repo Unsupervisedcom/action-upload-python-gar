@@ -1,7 +1,6 @@
 name: Upload Python Package to GAR
 description: Extracts a Python package and uploads to Google Artifact Registry
 inputs:
-  inputs:
   credentials-json:
     description: Google credentials json
     required: true

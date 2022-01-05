@@ -46,7 +46,7 @@ runs:
       with:
         python-version: '3.8.8'
       run: pip install twine
-    - name: upload python package
+    - name: Upload python package
       shell: bash
       run: |
         twine upload --repository-url https://{{ inputs.location }}-python.pkg.dev/{{ inputs.project_id }}/{{ inputs.repository}} {{ inputs.dist-directory }}

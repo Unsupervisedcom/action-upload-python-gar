@@ -1,4 +1,4 @@
-name: 'Upload Released Python Package to GAR'
+name: 'Upload Released Python Package Chart to GAR'
 description: 'Extracts a Python package from a release and uploads it to GAR. This is designed to be run on a release trigger.'
 inputs:
   inputs:

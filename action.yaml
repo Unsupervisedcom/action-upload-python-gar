@@ -1,5 +1,5 @@
-name: 'Upload Released Python Package to GAR'
-description: 'Extracts a Python package from a release and uploads it to GAR. This is designed to be run on a release trigger.'
+name: Upload Python Package to GAR
+description: Extracts a Python package and uploads to Google Artifact Registry
 inputs:
   inputs:
   credentials-json:
@@ -27,7 +27,7 @@ inputs:
     description: Artifact registry location
     required: false
     default: us-central1
-  proto-directory:
+  dist-directory:
     description: Location of package
     required: false
     default: dist/*
@@ -49,4 +49,4 @@ runs:
     - name: upload python package
       shell: bash
       run: |
-        twine upload --repository-url https://us-central1-python.pkg.dev/unsupervised-dev-ops/{{ inputs.repository}} {{ inputs.proto-directory }}
+        twine upload --repository-url https://{{ inputs.location }}-python.pkg.dev/{{ inputs.project_id }}/{{ inputs.repository}} {{ inputs.dist-directory }}

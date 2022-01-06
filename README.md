@@ -1,11 +1,11 @@
 <!-- start title -->
 
-# GitHub Action:Hello World
+# GitHub Action:Upload Python Package to GAR
 
 <!-- end title -->
 <!-- start description -->
 
-Greet someone
+Extracts a Python package and uploads to Google Artifact Registry
 
 <!-- end description -->
 <!-- start contents -->
@@ -13,19 +13,51 @@ Greet someone
 <!-- start usage -->
 
 ```yaml
-- uses: Unsupervisedcom/action-composite-action-template@undefined
+- uses: Unsupervisedcom/action-upload-python-gar@undefined
   with:
-    # Who to greet
-    # Default: World
-    who-to-greet: ""
+    # Google credentials json
+    credentials-json: ""
+
+    # Google cloud project id
+    project-id: ""
+
+    # Python package name
+    package-name: ""
+
+    # Version to publish
+    # Default: ${{ github.event.release.tag_name }}
+    version: ""
+
+    # Artifact registry scope
+    # Default: @unsupervised
+    scope: ""
+
+    # Artifact registry repository name
+    # Default: python
+    repository: ""
+
+    # Artifact registry location
+    # Default: us-central1
+    location: ""
+
+    # Location of package
+    # Default: dist/*
+    dist-directory: ""
 ```
 
 <!-- end usage -->
    <!-- start inputs -->
 
-| **Input**          | **Description** | **Default** | **Required** |
-| :----------------- | :-------------- | :---------: | :----------: |
-| **`who-to-greet`** | Who to greet    |   `World`   |   **true**   |
+| **Input**              | **Description**                   |              **Default**               | **Required** |
+| :--------------------- | :-------------------------------- | :------------------------------------: | :----------: |
+| **`credentials-json`** | Google credentials json           |                                        |   **true**   |
+| **`project-id`**       | Google cloud project id           |                                        |   **true**   |
+| **`package-name`**     | Python package name               |                                        |   **true**   |
+| **`version`**          | Version to publish                | `${{ github.event.release.tag_name }}` |  **false**   |
+| **`scope`**            | Artifact registry scope           |            `@unsupervised`             |  **false**   |
+| **`repository`**       | Artifact registry repository name |                `python`                |  **false**   |
+| **`location`**         | Artifact registry location        |             `us-central1`              |  **false**   |
+| **`dist-directory`**   | Location of package               |                `dist/*`                |  **false**   |
 
 <!-- end inputs -->
    <!-- start outputs -->

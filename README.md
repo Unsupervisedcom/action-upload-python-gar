@@ -15,49 +15,44 @@ Extracts a Python package and uploads to Google Artifact Registry
 ```yaml
 - uses: Unsupervisedcom/action-upload-python-gar@undefined
   with:
-    # Google credentials json
+    # Github token to use
+    # Default: ${{ github.token }}
+    token: ""
+
+    # Release tag to fetch chart from
+    # Default: ${{ github.event.release.tag_name }}
+    tag: ""
+
+    # gcloud service account credentials json
     credentials-json: ""
 
-    # Google cloud project id
+    # gcloud project id
     project-id: ""
 
-    # Python package name
-    package-name: ""
+    # the asset name containing the package, must be a tar file
+    release-asset-name: ""
 
-    # Version to publish
-    # Default: ${{ github.event.release.tag_name }}
-    version: ""
-
-    # Artifact registry scope
-    # Default: @unsupervised
-    scope: ""
-
-    # Artifact registry repository name
-    # Default: python
-    repository: ""
-
-    # Artifact registry location
+    # artifact registry region
     # Default: us-central1
-    location: ""
+    region: ""
 
-    # Location of package
-    # Default: dist/*
-    dist-directory: ""
+    # artifact registry repository
+    # Default: charts
+    repository: ""
 ```
 
 <!-- end usage -->
    <!-- start inputs -->
 
-| **Input**              | **Description**                   |              **Default**               | **Required** |
-| :--------------------- | :-------------------------------- | :------------------------------------: | :----------: |
-| **`credentials-json`** | Google credentials json           |                                        |   **true**   |
-| **`project-id`**       | Google cloud project id           |                                        |   **true**   |
-| **`package-name`**     | Python package name               |                                        |   **true**   |
-| **`version`**          | Version to publish                | `${{ github.event.release.tag_name }}` |  **false**   |
-| **`scope`**            | Artifact registry scope           |            `@unsupervised`             |  **false**   |
-| **`repository`**       | Artifact registry repository name |                `python`                |  **false**   |
-| **`location`**         | Artifact registry location        |             `us-central1`              |  **false**   |
-| **`dist-directory`**   | Location of package               |                `dist/*`                |  **false**   |
+| **Input**                | **Description**                                           |              **Default**               | **Required** |
+| :----------------------- | :-------------------------------------------------------- | :------------------------------------: | :----------: |
+| **`token`**              | Github token to use                                       |         `${{ github.token }}`          |  **false**   |
+| **`tag`**                | Release tag to fetch chart from                           | `${{ github.event.release.tag_name }}` |  **false**   |
+| **`credentials-json`**   | gcloud service account credentials json                   |                                        |   **true**   |
+| **`project-id`**         | gcloud project id                                         |                                        |   **true**   |
+| **`release-asset-name`** | the asset name containing the package, must be a tar file |                                        |   **true**   |
+| **`region`**             | artifact registry region                                  |             `us-central1`              |  **false**   |
+| **`repository`**         | artifact registry repository                              |                `charts`                |  **false**   |
 
 <!-- end inputs -->
    <!-- start outputs -->

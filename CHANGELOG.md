@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.1...v1.0.2) (2022-01-10)
+
+
+### Bug Fixes
+
+* location -> region ([#8](https://github.com/Unsupervisedcom/action-upload-python-gar/issues/8)) ([c49d419](https://github.com/Unsupervisedcom/action-upload-python-gar/commit/c49d419e96ed6d3f2c1b4e27700e51a919ceea23))
+
 ## [1.0.1](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.0...v1.0.1) (2022-01-08)
 
 

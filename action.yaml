@@ -48,6 +48,15 @@ runs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.8.8'
+    - id: repo-urls
+      shell: bash
+      run: |
+        baseUrl="${{ inputs.region }}-python.pkg.dev"
+        fullUrl="$baseUrl/${{ inputs.project-id }}/${{ inputs.repository }}"
+        echo "baseUrl is: $baseUrl"
+        echo "fullUrl is: $fullUrl"
+        echo "::set-output name=baseUrl::$baseUrl"
+        echo "::set-output name=fullUrl::$fullUrl"
     - name: Install dependencies
       shell: bash
       run: |
@@ -57,4 +66,4 @@ runs:
       run: |
       shell: bash
         python setup.py sdist bdist_wheel
-        twine upload --repository-url https://${{ inputs.region }}-python.pkg.dev/${{ inputs.project_id }}/${{ inputs.repository}} ${{ inputs.dist-directory }}
+        twine upload --repository-url https://${{ steps.repo-urls.outputs.fullUrl }} ${{ inputs.dist-directory }}

@@ -57,4 +57,4 @@ runs:
       run: |
       shell: bash
         python setup.py sdist bdist_wheel
-        twine upload --repository-url https://${{ inputs.location }}-python.pkg.dev/${{ inputs.project_id }}/${{ inputs.repository}} ${{ inputs.dist-directory }}
+        twine upload --repository-url https://${{ inputs.region }}-python.pkg.dev/${{ inputs.project_id }}/${{ inputs.repository}} ${{ inputs.dist-directory }}

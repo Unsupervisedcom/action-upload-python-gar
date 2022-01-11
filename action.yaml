@@ -33,7 +33,7 @@ runs:
       uses: robinraju/release-downloader@v1.3
       with:
         repository: ${{ github.repository }}
-        tag: ${{ inputs.tag }}
+        tag:  ${{ github.event.release.tag_name }}
         fileName: ${{ inputs.release-asset-name }}
         token: ${{ inputs.token }}
     - id: auth

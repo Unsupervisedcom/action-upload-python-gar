@@ -25,7 +25,7 @@ inputs:
   repository:
     description: 'artifact registry repository'
     required: false
-    default: 'charts'
+    default: 'python'
 runs:
   using: composite
   steps:

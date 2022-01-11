@@ -37,7 +37,7 @@ Extracts a Python package and uploads to Google Artifact Registry
     region: ""
 
     # artifact registry repository
-    # Default: charts
+    # Default: python
     repository: ""
 ```
 
@@ -52,7 +52,7 @@ Extracts a Python package and uploads to Google Artifact Registry
 | **`project-id`**         | gcloud project id                                         |                                        |   **true**   |
 | **`release-asset-name`** | the asset name containing the package, must be a tar file |                                        |   **true**   |
 | **`region`**             | artifact registry region                                  |             `us-central1`              |  **false**   |
-| **`repository`**         | artifact registry repository                              |                `charts`                |  **false**   |
+| **`repository`**         | artifact registry repository                              |                `python`                |  **false**   |
 
 <!-- end inputs -->
    <!-- start outputs -->

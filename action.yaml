@@ -29,11 +29,16 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: check inputs
+      run: |
+        echo "tag is ${{ inputs.tag }}"
+        echo "project-id is ${{ inputs.project-id}}"
+        echo "release asset name is ${{ inputs.realease-asset-name }}"
     - name: Fetch release
       uses: robinraju/release-downloader@v1.3
       with:
         repository: ${{ github.repository }}
-        tag:  ${{ github.event.release.tag_name }}
+        tag:  ${{ inputs.tag }}
         fileName: ${{ inputs.release-asset-name }}
         token: ${{ inputs.token }}
     - id: auth

@@ -30,6 +30,7 @@ runs:
   using: composite
   steps:
     - name: check inputs
+      shell: bash
       run: |
         echo "tag is ${{ inputs.tag }}"
         echo "project-id is ${{ inputs.project-id}}"

@@ -30,7 +30,6 @@ runs:
   using: composite
   steps:
     - name: check inputs
-      shell: bash
       run: |
         echo "tag is ${{ inputs.tag }}"
         echo "project-id is ${{ inputs.project-id}}"
@@ -71,5 +70,6 @@ runs:
     - name: Build and publish
       shell: bash
       run: |
-        python setup.py sdist bdist_wheel
-        twine upload --repository-url https://${{ steps.repo-urls.outputs.fullUrl }} ${{ inputs.dist-directory }}
+        tar -zxvf ${{ inputs.release-asset-name }} && rm ${{ inputs.release-asset-name }}
+        packagepath=$(ls | grep *.tgz)
+        twine upload --repository-url https://${{ steps.repo-urls.outputs.fullUrl }} $packagepath

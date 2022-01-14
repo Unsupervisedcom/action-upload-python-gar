@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.10...v1.0.11) (2022-01-14)
+
+
+### Bug Fixes
+
+* asset name ([#17](https://github.com/Unsupervisedcom/action-upload-python-gar/issues/17)) ([6b04fab](https://github.com/Unsupervisedcom/action-upload-python-gar/commit/6b04fab2dcae1911fbcef60b3b02e4bebfcbd3e3))
+
 ## [1.0.10](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.9...v1.0.10) (2022-01-13)
 
 

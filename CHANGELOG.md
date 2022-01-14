@@ -1,3 +1,10 @@
+## [1.0.20](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.19...v1.0.20) (2022-01-14)
+
+
+### Bug Fixes
+
+* auth location ([#26](https://github.com/Unsupervisedcom/action-upload-python-gar/issues/26)) ([9283f70](https://github.com/Unsupervisedcom/action-upload-python-gar/commit/9283f705a3722244585d2c8b13f2578a110c2ba4))
+
 ## [1.0.19](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.18...v1.0.19) (2022-01-14)
 
 

@@ -1,3 +1,10 @@
+## [1.0.15](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.14...v1.0.15) (2022-01-14)
+
+
+### Bug Fixes
+
+* twine ([#21](https://github.com/Unsupervisedcom/action-upload-python-gar/issues/21)) ([e44bc81](https://github.com/Unsupervisedcom/action-upload-python-gar/commit/e44bc81bbc499c31aa62e0444ff7bc3b9c6c4553))
+
 ## [1.0.14](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.13...v1.0.14) (2022-01-14)
 
 

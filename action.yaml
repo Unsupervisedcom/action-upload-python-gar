@@ -67,4 +67,5 @@ runs:
         ls
         packagePath=$(ls | grep *.tgz)
         echo "$packagePath"
-        twine upload --repository-url https://${{ steps.repo-urls.outputs.fullUrl }} $packagePath
+        tar -zxf $packagePath
+        twine upload --repository-url https://${{ steps.repo-urls.outputs.fullUrl }} dist/*

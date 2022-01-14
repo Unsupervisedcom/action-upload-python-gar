@@ -71,9 +71,5 @@ runs:
         packagePath=$(ls | grep *.tgz)
         echo "Uploading release $packagePath"
         tar -zxf $packagePath
-        gcloud auth application-default login
-        gcloud artifacts print-settings python [--project=PROJECT] \
-        [--repository=REPOSITORY] \
-        [--location=LOCATION]
-
+        echo "$(gcloud artifacts print-settings python)"
         twine upload --repository-url https://${{ steps.repo-urls.outputs.fullUrl }} dist/*

@@ -1,3 +1,10 @@
+## [1.0.22](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.21...v1.0.22) (2022-01-14)
+
+
+### Bug Fixes
+
+* auth login ([#28](https://github.com/Unsupervisedcom/action-upload-python-gar/issues/28)) ([1974147](https://github.com/Unsupervisedcom/action-upload-python-gar/commit/1974147231788cc6c816665354b1906b75429c1d))
+
 ## [1.0.21](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.20...v1.0.21) (2022-01-14)
 
 

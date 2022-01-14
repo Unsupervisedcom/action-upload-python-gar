@@ -64,14 +64,12 @@ runs:
       shell: bash
       run: |
         python -m pip install --upgrade pip
-        pip install setuptools wheel twine keyrings.google-artifactregistry-auth
+        pip install setuptools wheel twine keyring keyrings.google-artifactregistry-auth
     - name: Build and publish
       shell: bash
       run: |
         packagePath=$(ls | grep *.tgz)
         echo "Uploading release $packagePath"
         tar -zxf $packagePath
-        gcloud config set artifacts/location ${{ inputs.region }}
-        gcloud config set artifacts/repository ${{ inputs.repository }}
-        gcloud auth login
+        echo "$(gcloud artifacts print-settings python)"
         twine upload --repository-url https://${{ steps.repo-urls.outputs.fullUrl }} dist/*

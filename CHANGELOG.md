@@ -1,3 +1,10 @@
+## [1.0.19](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.18...v1.0.19) (2022-01-14)
+
+
+### Bug Fixes
+
+* update repo setting ([#25](https://github.com/Unsupervisedcom/action-upload-python-gar/issues/25)) ([a0298b9](https://github.com/Unsupervisedcom/action-upload-python-gar/commit/a0298b901237b7df5ed29c2866a63131060f3a66))
+
 ## [1.0.18](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.17...v1.0.18) (2022-01-14)
 
 

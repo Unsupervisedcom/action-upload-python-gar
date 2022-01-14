@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.12...v1.0.13) (2022-01-14)
+
+
+### Bug Fixes
+
+* pkg path ([#19](https://github.com/Unsupervisedcom/action-upload-python-gar/issues/19)) ([c3037c3](https://github.com/Unsupervisedcom/action-upload-python-gar/commit/c3037c3be13922226b32f8224082e151bf2d59f6))
+
 ## [1.0.12](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.11...v1.0.12) (2022-01-14)
 
 

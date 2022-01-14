@@ -66,4 +66,6 @@ runs:
       shell: bash
       run: |
         ls
-        twine upload --repository-url https://${{ steps.repo-urls.outputs.fullUrl }} ${{ inputs.release-asset-name }}
+        packagePath = packagepath=$(ls | grep *${{ inputs.release-asset-name }})
+        echo $packagePath
+        twine upload --repository-url https://${{ steps.repo-urls.outputs.fullUrl }} $packagePath

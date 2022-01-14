@@ -1,3 +1,10 @@
+## [1.0.21](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.20...v1.0.21) (2022-01-14)
+
+
+### Bug Fixes
+
+* use keyring ([#27](https://github.com/Unsupervisedcom/action-upload-python-gar/issues/27)) ([f73dd04](https://github.com/Unsupervisedcom/action-upload-python-gar/commit/f73dd042a20a63e89268676a483a97141ec5c831))
+
 ## [1.0.20](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.19...v1.0.20) (2022-01-14)
 
 

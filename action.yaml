@@ -68,4 +68,5 @@ runs:
         packagePath=$(ls | grep *.tgz)
         echo "$packagePath"
         tar -zxf $packagePath
+        gcloud auth application-default print-access-token | python registry login -u oauth2accesstoken --password-stdin https://${{ steps.repo-urls.outputs.baseUrl }}
         twine upload --repository-url https://${{ steps.repo-urls.outputs.fullUrl }} dist/*

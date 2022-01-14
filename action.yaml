@@ -65,4 +65,5 @@ runs:
     - name: Build and publish
       shell: bash
       run: |
+        ls
         twine upload --repository-url https://${{ steps.repo-urls.outputs.fullUrl }} ${{ inputs.release-asset-name }}

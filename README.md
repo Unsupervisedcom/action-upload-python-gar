@@ -23,6 +23,10 @@ Extracts a Python package and uploads to Google Artifact Registry
     # Default: ${{ github.event.release.tag_name }}
     tag: ""
 
+    # Artifact registry scope
+    # Default: @unsupervised
+    scope: ""
+
     # gcloud service account credentials json
     credentials-json: ""
 
@@ -48,6 +52,7 @@ Extracts a Python package and uploads to Google Artifact Registry
 | :----------------------- | :-------------------------------------------------------- | :------------------------------------: | :----------: |
 | **`token`**              | Github token to use                                       |         `${{ github.token }}`          |  **false**   |
 | **`tag`**                | Release tag to fetch chart from                           | `${{ github.event.release.tag_name }}` |  **false**   |
+| **`scope`**              | Artifact registry scope                                   |            `@unsupervised`             |  **false**   |
 | **`credentials-json`**   | gcloud service account credentials json                   |                                        |   **true**   |
 | **`project-id`**         | gcloud project id                                         |                                        |   **true**   |
 | **`release-asset-name`** | the asset name containing the package, must be a tar file |                                        |   **true**   |

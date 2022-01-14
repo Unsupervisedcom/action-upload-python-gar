@@ -1,3 +1,10 @@
+## [1.0.17](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.16...v1.0.17) (2022-01-14)
+
+
+### Bug Fixes
+
+* Update google auth ([#23](https://github.com/Unsupervisedcom/action-upload-python-gar/issues/23)) ([e263427](https://github.com/Unsupervisedcom/action-upload-python-gar/commit/e26342726e0b0ff60737879ffbb3700255e24843))
+
 ## [1.0.16](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.15...v1.0.16) (2022-01-14)
 
 

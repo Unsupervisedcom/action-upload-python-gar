@@ -9,6 +9,10 @@ inputs:
     description: 'Release tag to fetch chart from'
     required: false
     default: ${{ github.event.release.tag_name }}
+  scope:
+    description: Artifact registry scope
+    required: false
+    default: '@unsupervised'
   credentials-json:
     description: 'gcloud service account credentials json'
     required: true
@@ -67,6 +71,5 @@ runs:
         packagePath=$(ls | grep *.tgz)
         echo "Uploading release $packagePath"
         tar -zxf $packagePath
-        gcloud artifacts print-settings python
-        gcloud auth application-default print-access-token | login -u oauth2accesstoken --password-stdin https://${{ steps.repo-urls.outputs.baseUrl }}
+        echo "$(gcloud artifacts print-settings python --scope=${{ inputs.scope }} --repository ${{ inputs.repository }} --location ${{ inputs.location }})"
         twine upload --repository-url https://${{ steps.repo-urls.outputs.fullUrl }} dist/*

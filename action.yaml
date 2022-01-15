@@ -72,4 +72,4 @@ runs:
         echo "Uploading release $packagePath"
         tar -zxf $packagePath
         echo "$(gcloud artifacts print-settings python)"
-        twine upload --repository-url https://${{ steps.repo-urls.outputs.fullUrl }} dist/*
+        twine upload --repository-url https://${{ steps.repo-urls.outputs.fullUrl }} ${{ packagePath }}

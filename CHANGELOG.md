@@ -1,3 +1,11 @@
+## [1.0.24](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.23...v1.0.24) (2023-01-13)
+
+
+### Bug Fixes
+
+* added check-latest ([e3b55c9](https://github.com/Unsupervisedcom/action-upload-python-gar/commit/e3b55c9b100453a1e87902b8dcab3ae0de3b358d))
+* python version var ([9e273db](https://github.com/Unsupervisedcom/action-upload-python-gar/commit/9e273dbd9795ff242bea85fcad738be34198a558))
+
 ## [1.0.23](https://github.com/Unsupervisedcom/action-upload-python-gar/compare/v1.0.22...v1.0.23) (2022-01-14)
 
 

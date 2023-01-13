@@ -43,6 +43,10 @@ Extracts a Python package and uploads to Google Artifact Registry
     # artifact registry repository
     # Default: python
     repository: ""
+
+    # the version of python to build with
+    # Default: 3.10
+    python-version: ""
 ```
 
 <!-- end usage -->
@@ -58,6 +62,7 @@ Extracts a Python package and uploads to Google Artifact Registry
 | **`release-asset-name`** | the asset name containing the package, must be a tar file |                                        |   **true**   |
 | **`region`**             | artifact registry region                                  |             `us-central1`              |  **false**   |
 | **`repository`**         | artifact registry repository                              |                `python`                |  **false**   |
+| **`python-version`**     | the version of python to build with                       |                 `3.10`                 |  **false**   |
 
 <!-- end inputs -->
    <!-- start outputs -->

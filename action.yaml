@@ -50,7 +50,8 @@ runs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.8.8'
+        python-version: '3.10'
+        check_latest: true
     - id: repo-urls
       shell: bash
       run: |

@@ -55,6 +55,7 @@ runs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ inputs.python-version }}
+        check_latest: true
     - id: repo-urls
       shell: bash
       run: |

@@ -30,6 +30,10 @@ inputs:
     description: 'artifact registry repository'
     required: false
     default: 'python'
+  python-version:
+    description: 'the version of python to build with'
+    required: false
+    default: '3.10'
 runs:
   using: composite
   steps:
@@ -50,7 +54,8 @@ runs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.8.8'
+        python-version: ${{ inputs.python-version }}
+        check_latest: true
     - id: repo-urls
       shell: bash
       run: |
